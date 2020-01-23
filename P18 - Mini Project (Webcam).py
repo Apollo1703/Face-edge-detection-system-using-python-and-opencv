@@ -12,7 +12,7 @@ def sketch(image):
 
     canny_edges = cv2.Canny(img_gray_blur, 10, 70)
 
-    # Do an invert binarize the image
+    # threshod the canny image using adaptive gaussian (u can change it to one which you see fit)
     ret, mask = cv2.threshold(canny_edges, 70, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C)
     return mask
 
